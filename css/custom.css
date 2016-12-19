@@ -1,0 +1,129 @@
+#form-usuario a{
+	text-decoration: none;
+	color: #777;
+	font-weight: bold;
+	display: block;
+	padding: 15px;
+}
+.listagem{
+	border-bottom: 0.1em solid gray;
+	padding-top: 0.5em;
+}
+.listagem img, .listagem-autor img{
+	width: 170px;
+	height: 230px;
+}
+.figura-livro img{
+	width: 200px;
+	height: 300px;
+}
+.descricao-livro p{
+	margin-left: 1.2em;
+}
+.descricao-livro h3{
+	margin-left: 0.7em;
+}
+.descricao-livro button{
+	margin-bottom: 0.3em;
+	margin-top: -0.5em;
+	margin-left: 1em;
+}
+.descricao-livro{
+	float: left;
+	margin-top: -1.4em;
+}
+.descricao-autor{
+	margin-top: 0.3em;
+}
+.link-paginacao a, .link-paginacao strong{
+	font-size: 1.2em;
+	margin-left: 0.5em;
+}
+.quantidade-leitura{
+	margin-bottom: 0.1em;
+	font-size: 1.3em;
+}
+.well-ja-li{
+	background-color: #3c763d;
+}
+.well-lendo{
+	background-color: #337ab7;
+}
+.well-quero-ler{
+	background-color: #8a6d3b;
+}
+.well-abandonei{
+	background-color: #777;
+}
+.well-ja-li,.well-lendo,.well-quero-ler,.well-abandonei{
+	color: white;
+}
+.well-ja-li a, .well-lendo a, .well-quero-ler a, .well-abandonei a{
+	color: white;
+	font-weight: bold;
+	font-size: 1.1em;
+	text-decoration: none;
+}
+.ajusta-botao{
+	margin-top:1.7em;
+}
+.item > img{
+
+}
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  	/*width: 85%;*/
+	width: 944px;
+	height: 296px;
+  	margin: auto;
+}
+.carousel-caption{
+	background-color: black;
+	padding: 0 0;
+}
+.list-group-item:nth-child(even){
+	background-color: #d9edf7;
+	color: #31708f;
+}
+.list-group-item:nth-child(odd){
+	background-color: #fcf8e3;
+	color: #8a6d3b;
+}
+.list-group-item:last-child{
+	background-color: #337ab7;
+	color: white;
+	cursor: pointer;
+}
+.list-group-item:nth-child(n+10){
+	display: none;
+}
+.list-group-item:last-child{
+		display: block;
+}
+.menu-livros img{
+	width: 115px;
+	height: 173px;
+}
+.menu-livros a{
+	text-decoration: none;
+}
+.rodape-principal{
+	background-color: #e7e7e7;
+	border-top: 0.3px solid #ccc;
+	margin-top: 0.5em;
+	padding: 1em 2em;
+	color: #777;
+}
+.social{
+	list-style-type: none;
+}
+.social li{
+	display: inline;
+	margin-left: 0.3em;
+}
+.livro-item-menu{
+	margin-top: 0.7em;
+}
+#formulario-configura{
+	margin-bottom: 20em;
+}
