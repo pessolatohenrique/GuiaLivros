@@ -63,6 +63,7 @@
     	          </ul>
             </li>
           </ul>
+
           <?php if($this->session->userdata("usuario_logado")): ?>
           <ul class="nav navbar-nav navbar-right">
             <li>
@@ -78,6 +79,7 @@
           </ul>
       	<?php endif; ?>
         <?php if(!$this->session->userdata("usuario_logado")): ?>
+
           <ul class="nav navbar-nav navbar-right">
             <li>
               <?=anchor("Welcome/login","Entrar");?>
@@ -85,6 +87,12 @@
             <li><?=anchor("usuario/formulario","Cadastre-se")?></li>
           </ul>
         <?php endif; ?>
+         <?php echo form_open("livro/listar",array("class"=>"navbar-form navbar-right","method" => "GET"));?>
+              <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Pesquisar livro" name="titulo" id="titulo">
+              </div>
+              <button type="submit" class="btn btn-primary">Pesquisar</button>
+         <?php echo form_close(); ?>
         </div>
       </div>
     </nav>

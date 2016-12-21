@@ -10,9 +10,9 @@ function setAutoComplete(campo_id,vetor){
 }
 /*lista todos os autores cadastrados, fazendo requisição ao servidor*/
 function listaAutores(){
-	var endereco = "http://localhost/Projetos/Livraria/index.php/autor/listaJSON";
+	var endereco = "listaJSON";
 	$.ajax({
-		url: "http://localhost/Projetos/Livraria/index.php/autor/listaJSON",
+		url: endereco,
 		method: "POST",
 		dataType: "json",
 		success: function(data){
@@ -28,8 +28,11 @@ function listaAutores(){
 	})
 }
 /*lista todos os livros cadastrados, fazendo requisição ao servidor*/
-function listaLivros(){
-	var endereco = "http://localhost/Projetos/Livraria/index.php/livro/livrosJSON";
+function listaLivros(titulo){
+	var endereco = "livrosJSON";
+	if($(".carousel-inner").length){
+		endereco = "livro/livrosJSON";
+	}
 	$.ajax({
 		url: endereco,
 		method: "POST",
@@ -41,16 +44,16 @@ function listaLivros(){
 			});
 			setAutoComplete("titulo",vetNomes);
 		},error:function(){
-			alert("Erro ao buscar JSON. Contate o desenvolvedor, pedindo a ele para verificar URL");
+			// alert("Erro ao buscar JSON. Contate o desenvolvedor, pedindo a ele para verificar URL");
 		}
-	})
+	});
 }
 $(document).ready(function(){
 	var titulo = $(".container h1").text();
 	if(titulo.toLowerCase() == "pesquisa de autores"){
 		listaAutores();
-	}else if(titulo.toLowerCase() == "pesquisar livro"){
-		listaLivros();
+	}else{
+		listaLivros(titulo);
 	}
 	$("#dataNasc").mask("00/00/0000");
 	$("#data-inicio").mask("00/00/0000");
