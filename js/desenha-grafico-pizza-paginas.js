@@ -13,7 +13,7 @@ function drawChart() {
     data.addColumn('string',eixoY);
     data.addColumn('number',eixoX);
     data.addRows(tamanho_grafico);
-    tabela.find("tr:not(tr > th)").each(function(indice){
+    tabela.find("tbody tr:not(tr:last-child)").each(function(indice){
         var indiceAtualizado = parseInt(indice) + 1;
         var descricao = $(".tabela-grafico tr:nth-child("+indiceAtualizado+")").find("td:first-child").text();
         var quantidade = $(".tabela-grafico tr:nth-child("+indiceAtualizado+")").find("td:nth-child(2)").text();

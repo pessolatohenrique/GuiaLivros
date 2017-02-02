@@ -52,18 +52,22 @@ function verificaPesquisa($string){
 		<div class="row">
 			<div class="col-md-4">
 				<table class="table table-bordered tabela-grafico">
-					<tr>
-						<th><?=$titulo_coluna?></th>
-						<th>Quantidade</th>
-						<th>Páginas</th>
-					</tr>
-					<?php foreach($resultados as $item):?>
-					<tr>
-						<td><?=$item['pesquisa_nome']?></td>
-						<td><?=$item['total_pesquisa']?></td>
-						<td><?=$item['paginas_pesquisa']?></td>
-					</tr>
-					<?php endforeach; ?>
+					<thead>
+						<tr>
+							<th><?=$titulo_coluna?></th>
+							<th>Quantidade</th>
+							<th>Páginas</th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php foreach($resultados as $item):?>
+						<tr>
+							<td><?=$item['pesquisa_nome']?></td>
+							<td><?=$item['total_pesquisa']?></td>
+							<td><?=$item['paginas_pesquisa']?></td>
+						</tr>
+						<?php endforeach; ?>
+					</tbody>
 				</table>
 			</div>
 			<div class="col-md-8">

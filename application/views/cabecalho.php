@@ -20,6 +20,7 @@
   <script type="text/javascript" src="<?php echo base_url('js/desenha-grafico-pizza-paginas.js')?>"></script>
   <script type="text/javascript" src="<?php echo base_url('js/desenha-grafico-barra.js')?>"></script>
   <!-- Fim dos Scripts do Google Charts !-->
+  <script type="text/javascript" src="<?php echo base_url('js/estatisticas.js')?>"></script>
 </head>
 <body>
     <!-- ÁREA DO MENU !-->
