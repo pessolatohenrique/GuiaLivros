@@ -146,6 +146,7 @@ class Livro extends CI_Controller{
             $extensao = substr($_FILES["arquivo"]["name"], -4);
             $extensao = strtolower($extensao);
             $novo_nome = preg_replace( '/[`^~\'"]/', null, iconv( 'UTF-8', 'ASCII//TRANSLIT', $titulo.$extensao)); 
+            $novo_nome = retirarAcentos($novo_nome);
             $diretorio = './uploads/';
             move_uploaded_file($_FILES['arquivo']['tmp_name'], $diretorio.$novo_nome);
             return $novo_nome;
