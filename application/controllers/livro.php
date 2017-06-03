@@ -81,9 +81,7 @@ class Livro extends CI_Controller{
 			$tipo = "usuario";
 			$action_ordenacao = "livro/index/porUsuario";
 			$total_status = $this->usuario_livro_model->consultaTotalPorStatus($usuario['id']);
-		}
-		
-		
+		}		
 		/*Fim do helper de paginação*/		
 		$dados = array('livros' => $livros,'paginacao' => $this->pagination->create_links(),'titulo_pagina' => $titulo_pagina, 'action_ordenacao' => $action_ordenacao, 'tipo' => $tipo,'total_status' => $total_status);
 		$this->load->template("livros/listagem","GuiaLivros | Livro",$dados);

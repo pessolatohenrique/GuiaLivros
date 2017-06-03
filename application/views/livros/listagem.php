@@ -12,26 +12,46 @@
 			<div class="row quantidade-leitura">
 				<div class="col-md-2">
 					<div class="well well-ja-li">
-						<?php (isset($total_status[0]['total_status']))?$lido=$total_status[0]['total_status']:$lido=0; ?>
-						Já Li: <a href="?status_leitura=1"><?php echo sprintf("%02d",$lido);?></a>
+						<?php
+							$total_lido = 0;
+							foreach($total_status as $key => $val):
+								$val['status_id'] == 1?$total_lido=$val['total_status']:"";
+							endforeach;
+						?>
+						Já Li: <a href="?status_leitura=1"><?php echo sprintf("%02d",$total_lido);?></a>
 					</div>
 				</div>
 				<div class="col-md-2">
 					<div class="well well-lendo">
-						<?php (isset($total_status[1]['total_status']))?$lendo=$total_status[1]['total_status']:$lendo=0; ?>
-						Lendo: <a href="?status_leitura=2"><?php echo sprintf("%02d",$lendo);?></a>
+						<?php 
+							$total_lendo = 0;
+							foreach($total_status as $key => $val):
+								$val['status_id'] == 2?$total_lendo=$val['total_status']:"";
+							endforeach; 
+						?>
+						Lendo: <a href="?status_leitura=2"><?php echo sprintf("%02d",$total_lendo);?></a>
 					</div>
 				</div>
 				<div class="col-md-2">
 					<div class="well well-quero-ler">
-						<?php (isset($total_status[2]['total_status']))?$queroLer=$total_status[2]['total_status']:$queroLer=0; ?>
-						Quero Ler: <a href="?status_leitura=3"><?php echo sprintf("%02d",$queroLer);?></a>
+						<?php 
+							$total_quero_ler = 0;
+							foreach($total_status as $key => $val):
+								$val['status_id'] == 3?$total_quero_ler=$val['total_status']:"";
+							endforeach; 
+						?>
+						Quero Ler: <a href="?status_leitura=3"><?php echo sprintf("%02d",$total_quero_ler);?></a>
 					</div>
 				</div>
 				<div class="col-md-2">
 					<div class="well well-abandonei">Abandonei: 
-						<?php (isset($total_status[3]['total_status']))?$abandonei=$total_status[3]['total_status']:$abandonei=0; ?>
-						<a href="?status_leitura=4"><?php echo sprintf("%02d",$abandonei);?></a>
+						<?php 
+							$total_abandonei = 0;
+							foreach($total_status as $key => $val):
+								$val['status_id'] == 4?$total_abandonei=$val['total_status']:"";
+							endforeach; 
+						?>
+						<a href="?status_leitura=4"><?php echo sprintf("%02d",$total_abandonei);?></a>
 					</div>
 				</div>
 			</div>
