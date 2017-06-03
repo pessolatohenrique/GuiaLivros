@@ -65,4 +65,24 @@ class Livro_model extends CI_Model{
 		$this->db->order_by("titulo","ASC");
 		return $this->db->get()->result_array();
 	}
+	/**
+		*lista livros semelhantes a um livro específico
+		*@param $livro: livro a buscar semelhança. É um objeto
+		*@return $semelhantes: livros semelhantes encontrados
+	*/
+	public function listaSemelhantes($livro,$qtd_limite){
+		$titulo_subs = substr($livro['titulo'], 0,12);
+		$autor_id = $livro['autor_id'];
+		$genero_id = $livro['genero_id'];
+		$this->db->select("li.id AS livro_id,li.arquivo,li.titulo,li.paginas,a.nome AS autor_nome,g.nome AS genero_nome");
+				$this->db->distinct();
+		$this->db->from("livros li");
+		$this->db->join("autores a","li.autor_id = a.id","left");
+		$this->db->join("generos g","li.genero_id = g.id","left");
+		$this->db->where("li.id <>",$livro['livro_id']);
+		$this->db->where("(li.autor_id = {$autor_id} OR li.genero_id = {$genero_id} OR li.titulo LIKE '%{$titulo_subs}%')");
+		$this->db->order_by("li.id","RANDOM");
+		$this->db->limit($qtd_limite);
+		return $this->db->get()->result_array();
+	}
 }

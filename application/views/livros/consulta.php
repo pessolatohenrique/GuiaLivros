@@ -1,4 +1,5 @@
-<?php if($this->session->flashdata("mensagem-sucesso")): ?>
+<?php 
+if($this->session->flashdata("mensagem-sucesso")): ?>
 <div class="alert alert-success">
 	<p><?php echo $this->session->flashdata("mensagem-sucesso"); ?></p>
 </div>
@@ -64,6 +65,25 @@
 			<?=auto_typography(html_escape($livro['autor_biografia']))?>
 		</p>
 	</div>
+	<section class="leituras-semelhantes row">
+		<h4>Sugestões de Leitura</h4>
+		<p>Os leitores que leram este livro, também gostaram de:</p>
+		<div class="row">
+		<?php 
+		foreach($semelhantes as $key => $val): ?>
+			<div class="col-md-2 coluna-semelhantes">
+				<a href="<?=base_url()?>index.php/livro/<?=$val['livro_id']?>/<?=$val['titulo']?>">
+					<figure>
+						<img src="http://[::1]/Projetos/Livraria/uploads/<?=$val['arquivo']?>" alt="<?=$val['titulo']?>" class="img-recomendacao">
+						<figcaption><?=$val['titulo']?></figcaption>
+					</figure>
+				</a>
+			</div>
+		<?php 
+		endforeach; 
+		?>
+		</div>
+	</section>
 </div>
 <!-- Conteúdo do Modal !-->
 <div id="form-email" class="modal fade" role="dialog">

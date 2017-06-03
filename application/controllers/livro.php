@@ -91,8 +91,9 @@ class Livro extends CI_Controller{
 		$this->load->model(array("livro_model","usuario_livro_model"));
 		$usuario = verificaLogin();
 		$livro = $this->livro_model->consultar($id);
+		$semelhantes = $this->livro_model->listaSemelhantes($livro,7);
 		$status_leitura = $this->usuario_livro_model->consulta($usuario['id'],$livro['livro_id']);
-		$dados = array('livro' => $livro,'status_leitura' => $status_leitura);
+		$dados = array('livro' => $livro,'status_leitura' => $status_leitura,'semelhantes' => $semelhantes);
 		$this->load->template("livros/consulta","GuiaLivros | {$livro['titulo']}",$dados);
 	}
 	/*envia e-mail com recomendação de um livro*/
