@@ -33,7 +33,9 @@ class Usuario_Livro extends CI_Controller{
 			$this->usuario_livro_model->exclui($params['usuario_id'],$params['livro_id']);
 			$this->session->set_flashdata("mensagem-sucesso","Este livro foi retirado da sua lista!");
 		}
-		redirect('livro/'.$params['livro_id']."/".$titulo);
+		if($this->input->post("isAjax") != 1){
+			redirect('livro/'.$params['livro_id']."/".$titulo);	
+		}
 	}
 	/*gera dados para os gráficos e outras estatísticas*/
 	public function form_estatistica(){

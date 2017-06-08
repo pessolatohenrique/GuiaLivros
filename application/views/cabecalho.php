@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title><?php echo $titulo_pagina; ?></title>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('css/bootstrap.css') ?>">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('css/custom.css') ?>">
@@ -9,10 +10,12 @@
   <script type="text/javascript" src="<?php echo base_url('js/jquery-ui-1.10.4.custom.js')?>"></script>
 	<script type="text/javascript" src="<?php echo base_url('js/bootstrap.min.js') ?>"></script>
   <script type="text/javascript" src="<?php echo base_url('js/jquery.mask.js'); ?>"></script>
+  <script type="text/javascript" src="<?php echo base_url('js/utils.js'); ?>"></script>
   <script type="text/javascript" src="<?php echo base_url('js/validacao.js');?>"></script>
 	<script type="text/javascript" src="<?php echo base_url('js/geral.js') ?>"></script>
   <script type="text/javascript" src="<?php echo base_url('js/form-livros.js')?>"></script>
   <script type="text/javascript" src="<?php echo base_url('js/listagem-livros.js')?>"></script>
+  <script type="text/javascript" src="<?php echo base_url('js/usuario_livro.js')?>"></script>
   <script src="https://use.fontawesome.com/b17cc3a995.js"></script>
   <!-- Scripts do Google Charts !-->
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>

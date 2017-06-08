@@ -95,6 +95,7 @@
 				<?php $livro['titulo'] = substr($livro['titulo'], 0,41); ?>
 				<?=anchor("livro/{$livro['livro_id']}/{$livro['titulo']}",$livro['titulo'],array('id' => 'endereco_link'))?>
 			</h4>
+			<input type="hidden" class="livro_id" value="<?=$livro['livro_id']?>">
 			<strong>Autor: </strong>
 			<?=anchor("livro/listar?autor={$livro['autor_id']}",$livro['autor_nome'])?><br>
 			<strong>Gênero: </strong>
@@ -104,7 +105,30 @@
 			<strong>Editora: </strong>
 			<?=anchor("livro/listar?editora={$livro['editora_id']}",$livro['editora_nome'])?><br>
 			<strong>Sinopse: </strong><?=substr($livro['sinopse'],0,80)." (...)"?>
-			<button type="submit" class="btn btn-primary">Adicionar na Minha Lista</button>
+			<?php
+			if($tipo == "usuario"):
+			?>
+			<div class="dropdown">
+				<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+					<?php (isset($livro['descricao']) && $livro['descricao'] != "")?$texto_drop = "Marcado como: ".$livro['descricao']:$texto_drop = "Adicionar na minha lista"?>
+					<?=$texto_drop?>
+					<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu dropdown-status-leitura">
+					<li><a href="1">Já Li</a></li>
+					<li><a href="2">Lendo</a></li>
+					<li><a href="3">Quero Ler</a></li>
+					<li><a href="4">Abandonei</a></li>
+					<?php 
+					if(isset($livro['livro_id']) && $livro['livro_id'] != ""): 
+					?>
+						<li><a href="100">Retirar da Lista</a></li>
+					<?php endif; ?>
+				</ul>
+			</div>
+			<?php 
+			endif;
+			?>
 		</p>
 	</div>			
 <?php endforeach; ?>
