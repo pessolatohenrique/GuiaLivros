@@ -6,6 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('css/bootstrap.css') ?>">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('css/custom.css') ?>">
   <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/custom-theme/jquery-ui-1.9.2.custom.min.css')?>">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/dashboard.css')?>">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
 	<script type="text/javascript" src="<?php echo base_url('js/jquery-1.12.1.min.js')?>"></script>
   <script type="text/javascript" src="<?php echo base_url('js/jquery-ui-1.10.4.custom.js')?>"></script>
@@ -43,6 +44,7 @@
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav">
             <li class="active"><?=anchor("Welcome","Home")?></li>
+            <li><?=anchor("dashboard","Dashboard")?></li>
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">Livros<span class="caret"></span></a>
                 <ul class="dropdown-menu">

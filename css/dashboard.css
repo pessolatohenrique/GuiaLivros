@@ -1,0 +1,62 @@
+.dashboard h1{
+	font-size: 2.8em;
+}
+.dashboard h1,.dashboard h2, .dashboard h3{
+	border-bottom: 1px solid #ccc;
+}
+.panel-green{
+	background-color: #5cb85c;
+}
+.iconeGreen a{
+	color: #5cb85c;
+}
+.iconeYellow a{
+	color: #f0ad4e;
+}
+.iconeRed a{
+	color: #d9534f;
+}
+.panel-yellow{
+	background-color: #f0ad4e;
+}
+.panel-red{
+	background-color: #d9534f;
+}
+.painelCustom{
+	color: white;
+}
+.destaquePainel {
+    font-size: 3em;
+    margin-bottom: -0.3em;
+}
+.secaoDashboard{
+	clear: both;
+}
+.secaoDashboard h2{
+	margin-top: 0.7em;
+}
+.secaoDashboard ul{
+	padding-left: 1.3em;
+}
+.secaoDashboard li{
+	list-style-type: none;
+	display: inline-block;
+	box-sizing: border-box;
+}
+.secaoDashboard li > a{
+	text-decoration: none;
+	color: #4F4F4F;
+}
+.secaoDashboard figure{
+	padding-right: 0.3em;
+}
+.secaoDashboard figure > img{
+	width: 150px;
+}
+.icones-titulo{
+	float: right;
+}
+.ver-mais-dashboard{
+	float: right;
+	font-weight: bold;
+}

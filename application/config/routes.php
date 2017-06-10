@@ -51,6 +51,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['autor/(:num)/(:any)'] = 'autor/consulta/$1/$2';
 $route['livro/(:num)/(:any)'] = 'livro/consulta/$1/$2';
+$route['dashboard'] = 'Welcome/dashboard';
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
