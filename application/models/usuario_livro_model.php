@@ -27,7 +27,7 @@ class Usuario_livro_model extends CI_Model{
 	}
 	/*lista os livros de um determinado usuário, de acordo com um status*/
 	public function listar($parametros,$quantidade=0,$inicio=0){
-		if($parametros['status_leitura'] == ""){
+		if(!isset($parametros['status_leitura']) || $parametros['status_leitura'] == ""){
 			$parametros['status_leitura'] = 1;
 		}
 		$this->db->select("p.usuario_id, p.livro_id, p.status_id, p.data,s.descricao,a.id AS autor_id, a.nome AS autor_nome,
@@ -41,7 +41,17 @@ class Usuario_livro_model extends CI_Model{
 		$this->db->join("editoras e","main.editora_id = e.id");
 		$this->db->where("p.usuario_id",$parametros['usuario_id']);
 		$this->db->where("p.status_id",$parametros['status_leitura']);
-		$this->db->order_by($parametros['ordenacao']['campo'],$parametros['ordenacao']['criterio']);
+		if(isset($parametros['autor_id']) && $parametros['autor_id'] != ""){
+			$this->db->where("main.autor_id",$parametros['autor_id']);
+		}
+		if(isset($parametros['genero_id']) && $parametros['genero_id'] != ""){
+			$this->db->where("main.genero_id",$parametros['genero_id']);
+		}
+		if(isset($parametros['aleatorio']) && $parametros['aleatorio'] == 1){
+			$this->db->order_by("rand()");
+		}else{
+			$this->db->order_by($parametros['ordenacao']['campo'],$parametros['ordenacao']['criterio']);
+		}
 		$this->db->limit($quantidade,$inicio);
 		return $this->db->get()->result_array();
 	}
@@ -59,13 +69,13 @@ class Usuario_livro_model extends CI_Model{
 	/*cria estatísticas por autor, gênero ou editora para livros com status JÁ LI, com objetivo de gerar gráficos
 	usuario_id => id do usuário logado via sessão;
 	tipo_pesquisa => input post da pesquisa. Pode ter os valores: autor, gênero ou editora*/
-	public function criaEstatistica($usuario_id,$tipo_pesquisa,$data){
+	public function criaEstatistica($usuario_id,$tipo_pesquisa,$data,$ordenar=0){
 		if($tipo_pesquisa != "status"){
 			$campo = "nome";
 		}else{
 			$campo = "descricao";
 		}
-		$this->db->select("{$tipo_pesquisa}.{$campo} AS pesquisa_nome, COUNT({$tipo_pesquisa}.{$campo}) AS total_pesquisa, SUM(main.paginas) AS paginas_pesquisa");
+		$this->db->select("{$tipo_pesquisa}.{$campo} AS pesquisa_nome, COUNT({$tipo_pesquisa}.{$campo}) AS total_pesquisa, SUM(main.paginas) AS paginas_pesquisa,autor.id AS autor_id,genero.id AS genero_id");
 		$this->db->from("usuariolivro p");
 		$this->db->join("livros main","p.livro_id = main.id");
 		$this->db->join("status_leitura status","p.status_id = status.id");
@@ -82,6 +92,9 @@ class Usuario_livro_model extends CI_Model{
 			AND p.data <= '2016-12-31'*/
 			$this->db->where("data >=",$data['inicio']);
 			$this->db->where("data <=",$data['fim']);
+		}
+		if($ordenar == 1){
+			$this->db->order_by("paginas_pesquisa","DESC");
 		}
 		$this->db->group_by($tipo_pesquisa.".{$campo}");
 		return $this->db->get()->result_array();
@@ -101,5 +114,16 @@ class Usuario_livro_model extends CI_Model{
 		$vetor['ultimo'] = $query->last_row("array");
 		// return $query->result_array();
 		return $vetor;
+	}
+	public function criaEstatisticaDashboard($usuario_id){
+		$this->db->select("COUNT(main.livro_id) AS total_concluidos, SUM(li.paginas) AS total_paginas ,COUNT(DISTINCT a.nome) AS total_autores, COUNT(DISTINCT g.id) AS total_generos");
+		$this->db->from("usuariolivro main");
+		$this->db->join("livros li","main.livro_id = li.id","INNER");
+		$this->db->join("status_leitura stu","main.status_id = stu.id","INNER");
+		$this->db->join("autores a","li.autor_id = a.id","INNER");
+		$this->db->join("generos g","li.genero_id = g.id","INNER");
+		$this->db->where("main.usuario_id",$usuario_id);
+		$this->db->where("main.status_id",1);
+		return $this->db->get()->row_array();
 	}
 }
