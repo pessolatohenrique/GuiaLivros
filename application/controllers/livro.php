@@ -130,7 +130,7 @@ class Livro extends CI_Controller{
 	}
 	public function validacao(){
 		$this->form_validation->set_error_delimiters("<div class='text-danger'>","</div>");
-		$this->form_validation->set_rules("titulo","titulo","required|min_length[4]");
+		$this->form_validation->set_rules("titulo","titulo","required|min_length[4]|is_unique[livros.titulo]");
 		$this->form_validation->set_rules("ano","ano","required|min_length[4]|max_length[4]");
 		$this->form_validation->set_rules("paginas","paginas","required|min_length[2]|max_length[4]");
 		$this->form_validation->set_rules("autor_id","autor","required");
@@ -163,25 +163,43 @@ class Livro extends CI_Controller{
 	public function adicionaAutor(){
 		$this->load->model("autor_model");
 		$this->load->helper("date");
-		$autor = array('nome' => $this->input->post('nome'),
-			'dataNasc' => convertToAmerican($this->input->post('dataNasc')),
-			'biografia' => $this->input->post('biografia')
-		);
-		$inseriu = $this->autor_model->adicionar($autor);
-		echo $this->db->insert_id();
+		$autor_nome = $this->input->post('nome');
+		$flagExiste = $this->autor_model->consultaPorNome($autor_nome);
+		if(count($flagExiste) == 0){
+			$autor = array('nome' => $this->input->post('nome'),
+				'dataNasc' => convertToAmerican($this->input->post('dataNasc')),
+				'biografia' => $this->input->post('biografia')
+			);
+			$inseriu = $this->autor_model->adicionar($autor);
+			echo $this->db->insert_id();
+		}else{
+			echo "9999";
+		}
 	}
 	/*adiciona um gênero via AJAX. Deste modo é possível adicionar gêneros em outros formulários, como o de livros*/
 	public function adicionaGenero(){
 		$this->load->model("genero_model");
-		$genero = array("nome" => $this->input->post("genero"));
-		$inseriu = $this->genero_model->adicionar($genero);
-		echo $this->db->insert_id();
+		$genero_nome = $this->input->post("genero");
+		$flagExiste = $this->genero_model->consultaPorNome($genero_nome);
+		if(count($flagExiste) == 0){
+			$genero = array("nome" => $this->input->post("genero"));
+			$inseriu = $this->genero_model->adicionar($genero);
+			echo $this->db->insert_id();
+		}else{
+			echo "9999";
+		}
 	}
 	/*adiciona uma editora via AJAX. Deste modo é possível adicionar editoras em outros formulários, como o de livros*/
 	public function adicionaEditora(){
 		$this->load->model("editora_model");
-		$editora = array("nome" => $this->input->post("editora"));
-		$inseriu = $this->editora_model->adicionar($editora);
-		echo $this->db->insert_id();
+		$editora_nome = $this->input->post("editora");
+		$flagExiste = $this->editora_model->consultaPorNome($editora_nome);
+		if(count($flagExiste) == 0){
+			$editora = array("nome" => $this->input->post("editora"));
+			$inseriu = $this->editora_model->adicionar($editora);
+			echo $this->db->insert_id();
+		}else{
+			echo "9999";
+		}
 	}
 }

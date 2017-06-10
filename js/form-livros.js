@@ -32,14 +32,18 @@ function adicionaAutorBanco(vetor){
 		method: "POST",
 		dataType: "json",
 		success: function(data){
-			var vetAutor = [];
-			vetAutor['autor_id'] = data;
-			vetAutor['nome'] = vetor['nome'];
-			adicionaCombo("autor_id",vetAutor);
-			$("#addAutor").modal("hide");
+			if(data == "9999"){
+				alert("Este autor já existe na base de dados!");
+			}else{
+				var vetAutor = [];
+				vetAutor['autor_id'] = data;
+				vetAutor['nome'] = vetor['nome'];
+				adicionaCombo("autor_id",vetAutor);
+				$("#addAutor").modal("hide");
+			}
 		},
 		error: function(){
-			alert("Erro ao adicionar autor por este form. Contate o desenvolvedor");
+			alert("Erro ao adicionar autor. Possivelmente este autor já existe na base de dados!");
 		}
 	})
 }
@@ -51,11 +55,15 @@ function adicionaGeneroBanco(vetor){
 		method: "POST",
 		dataType: "json",
 		success: function(data){
-			var vetGenero = [];
-			vetGenero["genero_id"] = data;
-			vetGenero["nome"] = vetor["genero"];
-			adicionaCombo("genero_id",vetGenero);
-			$("#addGenero").modal("hide");
+			if(data == "9999"){
+				alert("Este gênero já existe na base de dados!");
+			}else{
+				var vetGenero = [];
+				vetGenero["genero_id"] = data;
+				vetGenero["nome"] = vetor["genero"];
+				adicionaCombo("genero_id",vetGenero);
+				$("#addGenero").modal("hide");
+			}
 		},error: function(){
 			alert("Erro ao adicionar gênero por este form. Contate o desenvolvedor");
 		}
@@ -69,11 +77,15 @@ function adicionaEditoraBanco(vetor){
 		method: "POST",
 		dataType: "json",
 		success: function(data){
-			var vetEditora = [];
-			vetEditora["editora_id"] = data;
-			vetEditora["nome"] = vetor["editora"];
-			adicionaCombo("editora_id",vetEditora);
-			$("#addEditora").modal("hide");
+			if(data == "9999"){
+				alert("Esta editora já existe na base de dados!");
+			}else{
+				var vetEditora = [];
+				vetEditora["editora_id"] = data;
+				vetEditora["nome"] = vetor["editora"];
+				adicionaCombo("editora_id",vetEditora);
+				$("#addEditora").modal("hide");
+			}
 		},error: function(){
 			alert("Erro ao adicionar editora por este form. Contate o desenvolvedor");
 		}

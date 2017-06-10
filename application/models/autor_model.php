@@ -31,4 +31,17 @@ class Autor_model extends CI_Model{
 		$this->db->from("autores");
 		return $this->db->get()->result_array();
 	}
+	/**
+		*verifica se um autor existe na base de dados a partir de deu nome
+		*@param $nome: nome do autor
+		*@return $autor: array caso existir, NULL caso não
+	*/
+	function consultaPorNome($nome){
+		$nome = ucwords($nome);
+		$this->db->select("a.id AS autor_id, a.nome AS autor_nome, a.dataNasc, a.biografia");
+		$this->db->from("autores a");
+		$this->db->where("a.nome",$nome);
+		$autor = $this->db->get()->result_array();
+		return $autor;
+	}
 }
