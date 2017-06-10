@@ -63,7 +63,7 @@ if(isset($_GET['modo']) && $_GET['modo'] == 'pesquisa'){
 			<div class="col-md-4">
 				<div class="form-group">
 					<label for="autor_id">Autor</label>
-					<select name="<?=$nameAutor?>" class="form-control" id="autor_id">
+					<select name="<?=$nameAutor?>" class="form-control cmbDinamico" id="autor_id">
 						<option value="">Selecione</option>
 						<?php foreach($autores as $autor): ?>
 							<?php $selecao = $autor['id'] == $this->session->userdata('autor_valida')?"selected = 'selected'":""?>
@@ -80,7 +80,7 @@ if(isset($_GET['modo']) && $_GET['modo'] == 'pesquisa'){
 			<div class="col-md-4">
 				<div class="form-group">
 					<label for="genero_id">Gênero</label>
-					<select name="<?=$nameGenero?>" class="form-control" id="genero_id">
+					<select name="<?=$nameGenero?>" class="form-control cmbDinamico" id="genero_id">
 						<option value="">Selecione</option>
 						<?php foreach($generos as $genero): ?>
 							<?php $selecao = $genero['id'] == $this->session->userdata('genero_valida')?"selected = 'selected'":""?>
@@ -96,7 +96,7 @@ if(isset($_GET['modo']) && $_GET['modo'] == 'pesquisa'){
 			<div class="col-md-4">
 				<div class="form-group">
 					<label for="editora_id">Editora</label>
-					<select name="<?=$nameEditora?>" class="form-control" id="editora_id">
+					<select name="<?=$nameEditora?>" class="form-control cmbDinamico" id="editora_id">
 						<option value="">Selecione</option>
 						<?php foreach($editoras as $editora): ?>
 							<?php $selecao = $editora['id'] == $this->session->userdata('editora_valida')?"selected = 'selected'":""?>

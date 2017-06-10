@@ -49,6 +49,7 @@ function listaLivros(titulo){
 	});
 }
 $(document).ready(function(){
+	$(".cmbDinamico").select2();
 	var titulo = $(".container h1").text();
 	if(titulo.toLowerCase() == "pesquisa de autores"){
 		listaAutores();

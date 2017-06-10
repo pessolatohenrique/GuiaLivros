@@ -6,6 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('css/bootstrap.css') ?>">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('css/custom.css') ?>">
   <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/custom-theme/jquery-ui-1.9.2.custom.min.css')?>">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
 	<script type="text/javascript" src="<?php echo base_url('js/jquery-1.12.1.min.js')?>"></script>
   <script type="text/javascript" src="<?php echo base_url('js/jquery-ui-1.10.4.custom.js')?>"></script>
 	<script type="text/javascript" src="<?php echo base_url('js/bootstrap.min.js') ?>"></script>
@@ -17,6 +18,7 @@
   <script type="text/javascript" src="<?php echo base_url('js/listagem-livros.js')?>"></script>
   <script type="text/javascript" src="<?php echo base_url('js/usuario_livro.js')?>"></script>
   <script src="https://use.fontawesome.com/b17cc3a995.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
   <!-- Scripts do Google Charts !-->
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script type="text/javascript" src="<?php echo base_url('js/desenha-grafico-pizza-quantidade.js')?>"></script>
