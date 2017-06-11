@@ -4,6 +4,9 @@
 <?php if(count($livros) == 0): ?>
 	<p class="alert alert-info">Nenhum livro encontrado. Refaça a pesquisa!</p>
 <?php endif; ?>
+<?php if($this->session->flashdata("mensagem-erro")): ?>
+	<p class="alert alert-info"><?=$this->session->flashdata("mensagem-erro")?></p>
+<?php endif;?>
 <input type="hidden" name="endereco_paginacao" id="endereco_paginacao">
 <?php //echo form_open($action_ordenacao, array("method" => "GET","id" => "form-ordenacao")); ?>
 	<?php if(count($livros) > 0): ?>
