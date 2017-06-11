@@ -145,7 +145,7 @@
 					<a href="livro/index/porUsuario?ordenacao=paginas">
 						<i class="fa fa-eye" aria-hidden="true"></i>
 					</a>
-					<a href="#">
+					<a href="#" class="minimizaPainel">
 						<i class="fa fa-caret-up" aria-hidden="true"></i>
 					</a>
 
@@ -180,7 +180,7 @@
 				<a href="livro/index/porUsuario?ordenacao=paginas">
 					<i class="fa fa-eye" aria-hidden="true"></i>
 				</a>
-				<a href="#">
+				<a href="#" class="minimizaPainel">
 					<i class="fa fa-caret-up" aria-hidden="true"></i>
 				</a>
 
@@ -212,7 +212,7 @@
 				<a href="usuario_livro/form_estatistica?tipo-pesquisa=autor&data-inicio=&data-fim=">
 					<i class="fa fa-eye" aria-hidden="true"></i>
 				</a>
-				<a href="#">
+				<a href="#" class="minimizaPainel">
 					<i class="fa fa-caret-up" aria-hidden="true"></i>
 				</a>
 
@@ -244,7 +244,7 @@
 				<a href="usuario_livro/form_estatistica?tipo-pesquisa=genero&data-inicio=&data-fim=">
 					<i class="fa fa-eye" aria-hidden="true"></i>
 				</a>
-				<a href="#">
+				<a href="#" class="minimizaPainel">
 					<i class="fa fa-caret-up" aria-hidden="true"></i>
 				</a>
 
@@ -276,7 +276,7 @@
 				<a href="livro/index?ordenacao=genero">
 					<i class="fa fa-eye" aria-hidden="true"></i>
 				</a>
-				<a href="#">
+				<a href="#" class="minimizaPainel">
 					<i class="fa fa-caret-up" aria-hidden="true"></i>
 				</a>
 
@@ -308,7 +308,7 @@
 				<a href="livro/index/porUsuario?status_leitura=1">
 					<i class="fa fa-eye" aria-hidden="true"></i>
 				</a>
-				<a href="#">
+				<a href="#" class="minimizaPainel">
 					<i class="fa fa-caret-up" aria-hidden="true"></i>
 				</a>
 
@@ -340,7 +340,7 @@
 				<a href="livro/index/porUsuario?status_leitura=3">
 					<i class="fa fa-eye" aria-hidden="true"></i>
 				</a>
-				<a href="#">
+				<a href="#" class="minimizaPainel">
 					<i class="fa fa-caret-up" aria-hidden="true"></i>
 				</a>
 

@@ -16,6 +16,12 @@ function eventosUserLivro(){
 		var livro_id = info_livro.find(".livro_id").val();
 		var status_id = $(this).attr("href");
 		vinculaLivro(livro_id,status_id,info_livro);
+	});
+	$(".minimizaPainel").on("click",function(event){
+		event.preventDefault();
+		var link = $(this);
+		var flagBootstrap = true;
+		minimizaPainelTitulo(link,flagBootstrap);
 	})
 }
 $(document).ready(function(){

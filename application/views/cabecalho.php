@@ -63,13 +63,7 @@
     	            <li><?=anchor("autor/formulario?modo=pesquisa","Pesquisar")?></li>       
     	          </ul>
             </li>
-           	<li class="dropdown">
-           		<a class="dropdown-toggle" data-toggle="dropdown" href="#">Opções<span class="caret"></span></a>
-    	          <ul class="dropdown-menu">
-                  <li><?=anchor("usuario_livro/form_estatistica","Estatísticas")?></li>
-                  <li><?=anchor("editora/formulario","Adicionar Editora/Gênero")?></li>
-    	          </ul>
-            </li>
+            <li><?=anchor("usuario_livro/form_estatistica","Gráficos e Estatísticas")?></li>
           </ul>
 
           <?php if($this->session->userdata("usuario_logado")): ?>
