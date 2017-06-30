@@ -107,7 +107,7 @@ class Livro extends CI_Controller{
 		$conteudo = $this->load->view("livros/recomendacao",$dados,TRUE);
 		$this->load->library("email");
 		$this->email->from("guialivrosoficial@gmail.com", 'GuiaLivros');
-		$this->email->subject("O usuário {$usuarioLogado['nome']} te recomendou o livro {$livroBusca['titulo']}");
+		$this->email->subject("O usuário {$usuarioLogado['nome']} te recomendou o livro '{$livroBusca['titulo']}'");
 		$this->email->to($email_recomendacao); 
 		$this->email->message($conteudo);
 		$enviou = $this->email->send();

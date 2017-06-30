@@ -23,7 +23,7 @@ if(isset($modo_consulta)){
 			<div class="row">
 				<div class="col-md-4">
 					<div class="form-group">
-						<label for="nome">Nome</label>
+						<label for="nome">Usuário</label>
 						<input type="text" name="nome" id="nome" class="form-control" 
 						value="<?=$nome?>">
 						<?php echo form_error('nome'); ?>

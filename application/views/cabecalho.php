@@ -3,6 +3,7 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title><?php echo $titulo_pagina; ?></title>
+  <link rel="icon" href="<?php echo base_url('uploads/book.jpg')?>" type="image/gif" sizes="16x16">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('css/bootstrap.css') ?>">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('css/custom.css') ?>">
   <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/custom-theme/jquery-ui-1.9.2.custom.min.css')?>">
