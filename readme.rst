@@ -1,70 +1,28 @@
 ###################
-What is CodeIgniter
+GuiaLivros
 ###################
 
-CodeIgniter is an Application Development Framework - a toolkit - for people
-who build web sites using PHP. Its goal is to enable you to develop projects
-much faster than you could if you were writing code from scratch, by providing
-a rich set of libraries for commonly needed tasks, as well as a simple
-interface and logical structure to access these libraries. CodeIgniter lets
-you creatively focus on your project by minimizing the amount of code needed
-for a given task.
-
 *******************
-Release Information
+Funcionalidades
 *******************
-
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
+<ul>
+<li>Gerenciamento de perfil pessoal</li>
+<li>Proteção de páginas. Exemplo: caso o usuário não esteja logado, fica impossibilitado de acessar as estatísticas</li>
+<li>Gerenciamento geral de livros, interligado com autora, gênero e editora</li>
+<li>Listagem de livros a partir de um determinado autor, gênero, editora ou outros critérios</li>
+<li>Gerenciamento da coleção pessoal, personalizável para cada usuário. O usuário pode gerenciar a coleção de acordo com status, tais como: Já Li, Lendo, Quero Ler e Abandonei</li>
+<li>Pesquisa de estatísticas, permitindo filtro por data inicial e final, com gráficos de barra e pizza para os livros da coleção de um usuário. Exemplos: comparação Lidos VS. Abandonados; livros por autor; livros por gênero; livros por editora</li>
+<li>Gerenciamento de autores, permitindo visitar página com biografia do autor e listagem de livros publicado por aquele autor</li>
+<li>As pesquisas de livro e autor são otimizadas com a ferramenta de autocomplete</li>
+<li>Formulários com validação antes de envio para o servidor</li>
+<li>Dashboard personalizado, com estatísticas e sugestões de leitura</li>
+</ul>
 
 **************************
-Changelog and New Features
+Tecnologias
 **************************
-
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
-
-*******************
-Server Requirements
-*******************
-
-PHP version 5.6 or newer is recommended.
-
-It should work on 5.3.7 as well, but we strongly advise you NOT to run
-such old versions of PHP, because of potential security and performance
-issues, as well as missing features.
-
-************
-Installation
-************
-
-Please see the `installation section <https://codeigniter.com/user_guide/installation/index.html>`_
-of the CodeIgniter User Guide.
-
-*******
-License
-*******
-
-Please see the `license
-agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
-
-*********
-Resources
-*********
-
--  `User Guide <https://codeigniter.com/docs>`_
--  `Language File Translations <https://github.com/bcit-ci/codeigniter3-translations>`_
--  `Community Forums <http://forum.codeigniter.com/>`_
--  `Community Wiki <https://github.com/bcit-ci/CodeIgniter/wiki>`_
--  `Community IRC <https://webchat.freenode.net/?channels=%23codeigniter>`_
-
-Report security issues to our `Security Panel <mailto:security@codeigniter.com>`_
-or via our `page on HackerOne <https://hackerone.com/codeigniter>`_, thank you.
-
-***************
-Acknowledgement
-***************
-
-The CodeIgniter team would like to thank EllisLab, all the
-contributors to the CodeIgniter project and you, the CodeIgniter user.
+<li>Arquitetura MVC</li>
+<li>Front-end em HTML, Bootstrap, JavaScript e jQuery</li>
+<li>Utilização de requisições AJAX e GoogleCharts</li>
+<li>Back-end em PHP, utilizando o framework Codeigniter</li>
+<li>Banco de Dados MySQL: 8 tabelas foram utilizadas</li>
